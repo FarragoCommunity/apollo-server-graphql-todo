@@ -49,7 +49,7 @@ const resolvers = {
     }
   };
 
-  mongoose.connect("mongodb://localhost:27017/tododb", { useUnifiedTopology: true }).then(() => {
+  mongoose.connect("mongodb+srv://todo:todo@cluster0.w36yg2g.mongodb.net/?retryWrites=true", { useUnifiedTopology: true }).then(() => {
     console.log('Db Connected');
     const server = new ApolloServer({ typeDefs, resolvers });
     server.listen().then(({ url }) => {

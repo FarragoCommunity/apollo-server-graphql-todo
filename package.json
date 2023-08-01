@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "*",
-    "graphql": "*",
-    "mongoose": "~5.7.9"
+    "apollo-server": "^3.12.0",
+    "graphql": "^16.7.1",
+    "mongoose": "^7.4.1"
   }
 }
