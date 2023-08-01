@@ -39,12 +39,19 @@ const resolvers = {
             return deleteRes.deletedCount > 0 ?  true : new ApolloError('Unable to delete record',500);
         }, updateTodo: async(_, {id, text, completed}) => {
 
-            const updatedItem = await todo.updateOne({_id: id}, {text, completed});
-            return updatedItem.nModified > 0 ? {
-                _id: id,
-                text,
-                completed
-            } : new ApolloError('Unable to update the record', 500);
+            try{
+
+                const updatedItem = await todo.updateOne({_id: id}, {text, completed});
+
+                return  {
+                    _id: id,
+                    text,
+                    completed
+                }
+            }catch(err){
+
+                new ApolloError('Unable to update the record', 500);
+            }
         }
     }
   };
