@@ -25,7 +25,7 @@ const resolvers = {
           return await todo.find();
       }, getTodoByStatus: async(_,{completed}) => {
           return await todo.find({completed});
-      }, getOne: async(id) =>{
+      }, getOne: async(_,{id}) =>{
         return await todo.findOne({_id : id})
       }
     },
