@@ -12,6 +12,7 @@ const typeDefs = gql`
   type Query {
     getTodo: [ITodo]
     getTodoByStatus(completed: Boolean): [ITodo]
+    getOne(id:ID) : ITodo
   }
   type Mutation {
       addTodo(text: String!, completed: Boolean): ITodo
